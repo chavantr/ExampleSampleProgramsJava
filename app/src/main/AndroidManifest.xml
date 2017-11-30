@@ -16,7 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReverseString"></activity>
+
+        <activity
+            android:name=".ReverseString"
+            android:label="@string/reverse_string" />
+
+        <activity
+            android:name=".PrimeNumber"
+            android:label="@string/prime_number" />
+
     </application>
 
 </manifest>

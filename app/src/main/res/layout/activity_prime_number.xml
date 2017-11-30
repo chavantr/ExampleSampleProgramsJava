@@ -19,7 +19,8 @@
             android:id="@+id/txtInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_name_for_reverse" />
+            android:hint="@string/enter_prime_number"
+            android:inputType="number" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -36,13 +37,13 @@
 
 
     <Button
-        android:id="@+id/btnReverse"
+        android:id="@+id/btnPrimeNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/reverse_string"
+        android:text="@string/prime_number"
         app:layout_constraintTop_toBottomOf="@+id/lblResult" />
 
     <TextView
@@ -53,6 +54,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-        app:layout_constraintTop_toBottomOf="@+id/btnReverse" />
+        app:layout_constraintTop_toBottomOf="@+id/btnPrimeNumber" />
 
 </android.support.constraint.ConstraintLayout>

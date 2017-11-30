@@ -10,13 +10,22 @@ import android.widget.TextView;
 
 public class ReverseString extends AppCompatActivity {
 
-    //region Filed Declaration
+    //region Field Declaration
 
     private EditText txtReverseString;
     private TextView lblResult;
-    private String reverse = "";
+    private TextView lblSourceCode;
+    private static final String strSourceCode = "private String reverseString(String inputString) {\n" +
+            "\n" +
+            "        if (inputString.length() == 1) {\n" +
+            "            return inputString;\n" +
+            "        } else {\n" +
+            "            return inputString.charAt(inputString.length() - 1)" +
+            "                    + reverseString(inputString.substring(0, inputString.length() - 1));\n" +
+            "        }\n" +
+            "    } ";
 
-    //endregion Filed Declaration
+    //endregion Field Declaration
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +33,8 @@ public class ReverseString extends AppCompatActivity {
         setContentView(R.layout.activity_reverse_string);
         findViewById(R.id.btnReverse).setOnClickListener(reverseString());
         txtReverseString = (TextInputEditText) findViewById(R.id.txtInput);
-        lblResult = (TextView) findViewById(R.id.lblResult);
+        lblResult = findViewById(R.id.lblResult);
+        lblSourceCode = findViewById(R.id.lblSourceCode);
     }
 
     @NonNull
@@ -32,7 +42,8 @@ public class ReverseString extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                lblResult.setText(reverseString(txtReverseString.getText().toString()));
+                lblResult.setText("Output : " + reverseString(txtReverseString.getText().toString()));
+                lblSourceCode.setText("Source Code : " + strSourceCode);
             }
         };
     }
@@ -42,9 +53,8 @@ public class ReverseString extends AppCompatActivity {
         if (inputString.length() == 1) {
             return inputString;
         } else {
-            reverse += inputString.charAt(inputString.length() - 1)
+            return inputString.charAt(inputString.length() - 1)
                     + reverseString(inputString.substring(0, inputString.length() - 1));
-            return reverse;
         }
     }
 

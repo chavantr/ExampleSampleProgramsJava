@@ -14,9 +14,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         try {
             findViewById(R.id.btnReverseString).setOnClickListener(reverseStringListener());
+            findViewById(R.id.btnPrimeNumber).setOnClickListener(startPrimeNumberListener());
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @NonNull
+    private View.OnClickListener startPrimeNumberListener() throws Exception {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PrimeNumber.class);
+                startActivity(intent);
+            }
+        };
     }
 
     @NonNull
@@ -24,10 +36,8 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(MainActivity.this, ReverseString.class);
                 startActivity(intent);
-
             }
         };
     }
