@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ExampleSampleProgramsJava</string>
-    <string name="reverse_string">Reverse String</string>
     <string name="prime_number">Prime Number</string>
     <string name="fibonacci_number">Fibonacci Number</string>
     <string name="enter_name_for_reverse">Enter name for reverse</string>
